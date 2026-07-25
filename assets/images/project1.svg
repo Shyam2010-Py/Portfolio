@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="ECE Toolkit">
+    <defs>
+        <linearGradient id="screen" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0a0e1a"/>
+            <stop offset="100%" stop-color="#111827"/>
+        </linearGradient>
+        <linearGradient id="frame" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1e293b"/>
+            <stop offset="100%" stop-color="#0f172a"/>
+        </linearGradient>
+        <linearGradient id="cGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#22d3ee"/>
+            <stop offset="100%" stop-color="#06b6d4"/>
+        </linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <symbol id="hex" viewBox="-10 -10 20 20">
+            <polygon points="0,-10 8.66,-5 8.66,5 0,10 -8.66,5 -8.66,-5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </symbol>
+    </defs>
+
+    <!-- Grid bg -->
+    <g opacity="0.12" stroke="#06b6d4" stroke-width="0.5" fill="none">
+        <path d="M 0 80 L 600 80 M 0 160 L 600 160 M 0 240 L 600 240 M 0 320 L 600 320"/>
+        <path d="M 100 0 L 100 400 M 200 0 L 200 400 M 300 0 L 300 400 M 400 0 L 400 400 M 500 0 L 500 400"/>
+    </g>
+
+    <!-- Hexagons -->
+    <g opacity="0.25" color="#06b6d4">
+        <use href="#hex" x="60" y="60" width="36" height="36"/>
+        <use href="#hex" x="520" y="80" width="44" height="44"/>
+        <use href="#hex" x="80" y="320" width="32" height="32"/>
+        <use href="#hex" x="500" y="320" width="40" height="40"/>
+    </g>
+
+    <!-- Floating dots -->
+    <g opacity="0.4" fill="#22d3ee">
+        <circle cx="50" cy="200" r="4"/>
+        <circle cx="560" cy="200" r="4"/>
+        <circle cx="150" cy="40" r="3"/>
+        <circle cx="450" cy="360" r="3"/>
+    </g>
+
+    <!-- Circuit lines top right -->
+    <g stroke="#06b6d4" stroke-width="1.2" fill="none" opacity="0.5">
+        <path d="M 380 50 L 460 50 L 460 90 L 520 90"/>
+        <circle cx="380" cy="50" r="3" fill="#22d3ee"/>
+        <circle cx="520" cy="90" r="3" fill="#22d3ee"/>
+        <rect x="430" y="65" width="20" height="20" rx="2"/>
+    </g>
+
+    <!-- Circuit lines bottom left -->
+    <g stroke="#06b6d4" stroke-width="1.2" fill="none" opacity="0.5">
+        <path d="M 80 320 L 80 360 L 140 360"/>
+        <path d="M 100 310 L 100 340"/>
+        <circle cx="80" cy="320" r="3" fill="#22d3ee"/>
+        <circle cx="80" cy="360" r="3" fill="#22d3ee"/>
+        <circle cx="140" cy="360" r="3" fill="#22d3ee"/>
+    </g>
+
+    <!-- Binary digits -->
+    <g font-family="monospace" font-size="11" fill="#22d3ee" opacity="0.55">
+        <text x="40" y="120">01</text>
+        <text x="545" y="140">10</text>
+        <text x="30" y="280">11</text>
+        <text x="555" y="290">01</text>
+    </g>
+
+    <!-- Brackets -->
+    <g font-family="monospace" font-size="20" fill="#06b6d4" opacity="0.45" font-weight="bold">
+        <text x="20" y="180">{ }</text>
+        <text x="545" y="240">{ }</text>
+    </g>
+
+    <!-- Main object shadow -->
+    <ellipse cx="300" cy="335" rx="190" ry="8" fill="#06b6d4" opacity="0.2" filter="url(#softGlow)"/>
+
+    <!-- ===== ECE TOOLKIT: Oscilloscope + Multimeter on PCB ===== -->
+    <g transform="translate(180, 110)">
+        <!-- PCB board background -->
+        <rect x="0" y="0" width="240" height="200" rx="14" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5" opacity="0.95"/>
+        <!-- PCB traces -->
+        <g stroke="#06b6d4" stroke-width="1" fill="none" opacity="0.5">
+            <path d="M 20 30 L 80 30 L 80 60"/>
+            <path d="M 220 30 L 160 30 L 160 60"/>
+            <path d="M 20 170 L 60 170 L 60 140"/>
+            <path d="M 220 170 L 180 170 L 180 140"/>
+        </g>
+        <!-- PCB pads (small circles) -->
+        <g fill="#22d3ee" opacity="0.7">
+            <circle cx="80" cy="30" r="2"/>
+            <circle cx="160" cy="30" r="2"/>
+            <circle cx="60" cy="170" r="2"/>
+            <circle cx="180" cy="170" r="2"/>
+        </g>
+
+        <!-- Oscilloscope screen (left) -->
+        <rect x="20" y="50" width="95" height="100" rx="6" fill="url(#screen)" stroke="#22d3ee" stroke-width="1.2"/>
+        <!-- Oscilloscope grid -->
+        <g stroke="#22d3ee" stroke-width="0.4" opacity="0.4">
+            <line x1="20" y1="80" x2="115" y2="80"/>
+            <line x1="20" y1="100" x2="115" y2="100"/>
+            <line x1="20" y1="120" x2="115" y2="120"/>
+            <line x1="47" y1="50" x2="47" y2="150"/>
+            <line x1="68" y1="50" x2="68" y2="150"/>
+            <line x1="88" y1="50" x2="88" y2="150"/>
+        </g>
+        <!-- Oscilloscope sine wave -->
+        <path d="M 25 100 Q 35 80, 45 100 T 65 100 T 85 100 T 105 100" stroke="#22d3ee" stroke-width="2" fill="none" filter="url(#glow)"/>
+        <!-- Oscilloscope label -->
+        <text x="67" y="62" text-anchor="middle" font-family="monospace" font-size="7" fill="#22d3ee">OSC</text>
+
+        <!-- Multimeter (right) -->
+        <rect x="125" y="50" width="95" height="100" rx="6" fill="url(#screen)" stroke="#22d3ee" stroke-width="1.2"/>
+        <!-- Multimeter LCD -->
+        <rect x="135" y="62" width="75" height="32" rx="2" fill="#000"/>
+        <text x="172" y="84" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#22d3ee">5.00V</text>
+        <!-- Multimeter dial -->
+        <circle cx="172" cy="120" r="14" fill="none" stroke="#22d3ee" stroke-width="1.5"/>
+        <line x1="172" y1="120" x2="180" y2="110" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="172" cy="120" r="2" fill="#22d3ee"/>
+        <!-- Multimeter probes -->
+        <line x1="135" y1="138" x2="135" y2="155" stroke="#ef4444" stroke-width="1.5"/>
+        <line x1="210" y1="138" x2="210" y2="155" stroke="#22d3ee" stroke-width="1.5"/>
+        <circle cx="135" cy="155" r="2.5" fill="#ef4444"/>
+        <circle cx="210" cy="155" r="2.5" fill="#22d3ee"/>
+    </g>
+
+    <!-- Floating resistor (top right area) -->
+    <g transform="translate(440, 70) rotate(-15)">
+        <rect x="-18" y="-5" width="36" height="10" rx="2" fill="#1e293b" stroke="#22d3ee" stroke-width="1"/>
+        <line x1="-26" y1="0" x2="-18" y2="0" stroke="#22d3ee" stroke-width="1.2"/>
+        <line x1="18" y1="0" x2="26" y2="0" stroke="#22d3ee" stroke-width="1.2"/>
+        <g fill="#22d3ee" opacity="0.8">
+            <rect x="-12" y="-3" width="3" height="6"/>
+            <rect x="-6" y="-3" width="3" height="6"/>
+            <rect x="0" y="-3" width="3" height="6"/>
+            <rect x="6" y="-3" width="3" height="6"/>
+        </g>
+    </g>
+
+    <!-- Floating capacitor (bottom right) -->
+    <g transform="translate(465, 320)">
+        <line x1="-12" y1="-8" x2="-12" y2="8" stroke="#22d3ee" stroke-width="2"/>
+        <line x1="-8" y1="-8" x2="-8" y2="8" stroke="#22d3ee" stroke-width="2"/>
+        <line x1="-20" y1="0" x2="-12" y2="0" stroke="#22d3ee" stroke-width="1.2"/>
+        <line x1="-8" y1="0" x2="20" y2="0" stroke="#22d3ee" stroke-width="1.2"/>
+    </g>
+
+    <!-- Chip icon top left of PCB -->
+    <g transform="translate(170, 130)">
+        <rect width="22" height="22" rx="3" fill="#1e293b" stroke="#22d3ee" stroke-width="1.2"/>
+        <rect x="5" y="5" width="12" height="12" rx="1" fill="none" stroke="#22d3ee" stroke-width="0.8" opacity="0.6"/>
+        <g stroke="#22d3ee" stroke-width="0.8" opacity="0.7">
+            <line x1="-3" y1="6" x2="0" y2="6"/><line x1="-3" y1="11" x2="0" y2="11"/><line x1="-3" y1="16" x2="0" y2="16"/>
+            <line x1="22" y1="6" x2="25" y2="6"/><line x1="22" y1="11" x2="25" y2="11"/><line x1="22" y1="16" x2="25" y2="16"/>
+        </g>
+    </g>
+
+    <!-- Glowing E badge - top right -->
+    <g transform="translate(450, 165)">
+        <circle r="48" fill="#22d3ee" opacity="0.18" filter="url(#softGlow)"/>
+        <circle r="38" fill="#0a0e1a" stroke="url(#cGrad)" stroke-width="3"/>
+        <circle r="32" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.4"/>
+        <text x="0" y="11" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="url(#cGrad)">E</text>
+        <g stroke="#22d3ee" stroke-width="1.5" opacity="0.7">
+            <line x1="0" y1="-30" x2="0" y2="-26"/>
+            <line x1="0" y1="26" x2="0" y2="30"/>
+            <line x1="-30" y1="0" x2="-26" y2="0"/>
+            <line x1="26" y1="0" x2="30" y2="0"/>
+        </g>
+    </g>
+
+    <!-- Lightning bolt accent (right of PCB) -->
+    <g transform="translate(440, 200)" fill="#22d3ee" opacity="0.8">
+        <path d="M 0 0 L -8 14 L -2 14 L -6 28 L 8 10 L 2 10 L 6 0 Z" filter="url(#glow)"/>
+    </g>
+
+    <!-- Subtle scan line on PCB -->
+    <line x1="180" y1="210" x2="420" y2="210" stroke="#22d3ee" stroke-width="0.5" opacity="0.15"/>
+</svg>

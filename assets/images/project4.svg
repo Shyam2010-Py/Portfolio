@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="C Programming Hub">
+    <defs>
+        <!-- Monitor screen gradient -->
+        <linearGradient id="screen" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0a0e1a"/>
+            <stop offset="100%" stop-color="#111827"/>
+        </linearGradient>
+
+        <!-- Monitor frame gradient -->
+        <linearGradient id="frame" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1e293b"/>
+            <stop offset="100%" stop-color="#0f172a"/>
+        </linearGradient>
+
+        <!-- Glass card gradient (matches portfolio glassmorphism) -->
+        <linearGradient id="glass" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.12"/>
+        </linearGradient>
+
+        <!-- C letter gradient -->
+        <linearGradient id="cGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#22d3ee"/>
+            <stop offset="100%" stop-color="#06b6d4"/>
+        </linearGradient>
+
+        <!-- Glow filters -->
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- Reusable hexagon path -->
+        <symbol id="hex" viewBox="-10 -10 20 20">
+            <polygon points="0,-10 8.66,-5 8.66,5 0,10 -8.66,5 -8.66,-5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </symbol>
+    </defs>
+
+    <!-- Subtle decorative grid pattern (faded, on transparent bg) -->
+    <g opacity="0.12" stroke="#06b6d4" stroke-width="0.5" fill="none">
+        <path d="M 0 80 L 600 80 M 0 160 L 600 160 M 0 240 L 600 240 M 0 320 L 600 320"/>
+        <path d="M 100 0 L 100 400 M 200 0 L 200 400 M 300 0 L 300 400 M 400 0 L 400 400 M 500 0 L 500 400"/>
+    </g>
+
+    <!-- Background floating hexagons -->
+    <g opacity="0.25" color="#06b6d4">
+        <use href="#hex" x="60" y="60" width="36" height="36"/>
+        <use href="#hex" x="520" y="80" width="44" height="44"/>
+        <use href="#hex" x="80" y="320" width="32" height="32"/>
+        <use href="#hex" x="500" y="320" width="40" height="40"/>
+    </g>
+
+    <!-- Background floating circles -->
+    <g opacity="0.4" fill="#22d3ee">
+        <circle cx="50" cy="200" r="4"/>
+        <circle cx="560" cy="200" r="4"/>
+        <circle cx="150" cy="40" r="3"/>
+        <circle cx="450" cy="360" r="3"/>
+    </g>
+
+    <!-- Circuit lines (top right) -->
+    <g stroke="#06b6d4" stroke-width="1.2" fill="none" opacity="0.5">
+        <path d="M 380 50 L 460 50 L 460 90 L 520 90"/>
+        <circle cx="380" cy="50" r="3" fill="#22d3ee"/>
+        <circle cx="520" cy="90" r="3" fill="#22d3ee"/>
+        <rect x="430" y="65" width="20" height="20" rx="2"/>
+    </g>
+
+    <!-- Circuit lines (bottom left) -->
+    <g stroke="#06b6d4" stroke-width="1.2" fill="none" opacity="0.5">
+        <path d="M 80 320 L 80 360 L 140 360"/>
+        <path d="M 100 310 L 100 340"/>
+        <circle cx="80" cy="320" r="3" fill="#22d3ee"/>
+        <circle cx="80" cy="360" r="3" fill="#22d3ee"/>
+        <circle cx="140" cy="360" r="3" fill="#22d3ee"/>
+    </g>
+
+    <!-- Binary digits floating -->
+    <g font-family="monospace" font-size="11" fill="#22d3ee" opacity="0.55">
+        <text x="40" y="120">01</text>
+        <text x="545" y="140">10</text>
+        <text x="30" y="280">11</text>
+        <text x="555" y="290">01</text>
+    </g>
+
+    <!-- Code brackets floating -->
+    <g font-family="monospace" font-size="20" fill="#06b6d4" opacity="0.45" font-weight="bold">
+        <text x="20" y="180">{ }</text>
+        <text x="545" y="240">{ }</text>
+    </g>
+
+    <!-- Monitor shadow (subtle) -->
+    <ellipse cx="300" cy="320" rx="180" ry="8" fill="#06b6d4" opacity="0.2" filter="url(#softGlow)"/>
+
+    <!-- Monitor stand -->
+    <path d="M 270 285 L 260 305 L 340 305 L 330 285 Z" fill="url(#frame)"/>
+    <rect x="245" y="300" width="110" height="8" rx="4" fill="#0f172a"/>
+
+    <!-- Monitor outer frame -->
+    <rect x="150" y="100" width="300" height="195" rx="14" fill="url(#frame)" stroke="#06b6d4" stroke-width="1" opacity="0.95"/>
+
+    <!-- Monitor inner bezel -->
+    <rect x="158" y="108" width="284" height="170" rx="6" fill="#000" opacity="0.4"/>
+
+    <!-- Screen background -->
+    <rect x="164" y="114" width="272" height="158" rx="4" fill="url(#screen)"/>
+
+    <!-- Code editor top bar -->
+    <rect x="164" y="114" width="272" height="20" rx="4" fill="#1e293b"/>
+    <rect x="164" y="128" width="272" height="6" fill="#1e293b"/>
+    <!-- Window dots -->
+    <circle cx="176" cy="124" r="3" fill="#ef4444"/>
+    <circle cx="186" cy="124" r="3" fill="#fbbf24"/>
+    <circle cx="196" cy="124" r="3" fill="#22c55e"/>
+    <!-- Filename tab -->
+    <rect x="215" y="119" width="78" height="14" rx="3" fill="#0a0e1a"/>
+    <text x="222" y="129" font-family="monospace" font-size="8" fill="#22d3ee">main.c</text>
+
+    <!-- Line numbers -->
+    <g font-family="monospace" font-size="8" fill="#475569" text-anchor="end">
+        <text x="180" y="152">1</text>
+        <text x="180" y="166">2</text>
+        <text x="180" y="180">3</text>
+        <text x="180" y="194">4</text>
+        <text x="180" y="208">5</text>
+        <text x="180" y="222">6</text>
+        <text x="180" y="236">7</text>
+        <text x="180" y="250">8</text>
+        <text x="180" y="264">9</text>
+    </g>
+
+    <!-- Vertical separator -->
+    <line x1="186" y1="146" x2="186" y2="268" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Code content with syntax highlighting -->
+    <g font-family="monospace" font-size="9">
+        <text x="192" y="152">
+            <tspan fill="#a78bfa">#include</tspan><tspan fill="#e2e8f0"> &lt;</tspan><tspan fill="#22d3ee">stdio.h</tspan><tspan fill="#e2e8f0">&gt;</tspan>
+        </text>
+        <text x="192" y="180">
+            <tspan fill="#a78bfa">int</tspan><tspan fill="#fbbf24"> main</tspan><tspan fill="#e2e8f0">() {</tspan>
+        </text>
+        <text x="200" y="194">
+            <tspan fill="#fbbf24">printf</tspan><tspan fill="#e2e8f0">(</tspan><tspan fill="#86efac">"Hello"</tspan><tspan fill="#e2e8f0">);</tspan>
+        </text>
+        <text x="200" y="208">
+            <tspan fill="#a78bfa">int</tspan><tspan fill="#f472b6"> x</tspan><tspan fill="#e2e8f0"> = </tspan><tspan fill="#fbbf24">42</tspan><tspan fill="#e2e8f0">;</tspan>
+        </text>
+        <text x="200" y="222">
+            <tspan fill="#a78bfa">return</tspan><tspan fill="#e2e8f0"> </tspan><tspan fill="#fbbf24">0</tspan><tspan fill="#e2e8f0">;</tspan>
+        </text>
+        <text x="192" y="236">
+            <tspan fill="#e2e8f0">}</tspan>
+        </text>
+        <text x="192" y="264">
+            <tspan fill="#64748b">// c programming</tspan>
+        </text>
+    </g>
+
+    <!-- Blinking cursor -->
+    <rect x="252" y="258" width="6" height="2" fill="#22d3ee" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;0;0.9" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Power LED on monitor -->
+    <circle cx="438" cy="289" r="1.5" fill="#22d3ee" filter="url(#glow)"/>
+
+    <!-- Glowing C logo badge - top right of monitor -->
+    <g transform="translate(450, 165)">
+        <circle r="48" fill="#22d3ee" opacity="0.18" filter="url(#softGlow)"/>
+        <circle r="38" fill="#0a0e1a" stroke="url(#cGrad)" stroke-width="3"/>
+        <circle r="32" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.4"/>
+        <text x="0" y="11" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="url(#cGrad)">C</text>
+        <g stroke="#22d3ee" stroke-width="1.5" opacity="0.7">
+            <line x1="0" y1="-30" x2="0" y2="-26"/>
+            <line x1="0" y1="26" x2="0" y2="30"/>
+            <line x1="-30" y1="0" x2="-26" y2="0"/>
+            <line x1="26" y1="0" x2="30" y2="0"/>
+        </g>
+    </g>
+
+    <!-- Small chip icon (top left of monitor area) -->
+    <g transform="translate(170, 130)">
+        <rect width="22" height="22" rx="3" fill="#1e293b" stroke="#22d3ee" stroke-width="1.2"/>
+        <rect x="5" y="5" width="12" height="12" rx="1" fill="none" stroke="#22d3ee" stroke-width="0.8" opacity="0.6"/>
+        <g stroke="#22d3ee" stroke-width="0.8" opacity="0.7">
+            <line x1="-3" y1="6" x2="0" y2="6"/>
+            <line x1="-3" y1="11" x2="0" y2="11"/>
+            <line x1="-3" y1="16" x2="0" y2="16"/>
+            <line x1="22" y1="6" x2="25" y2="6"/>
+            <line x1="22" y1="11" x2="25" y2="11"/>
+            <line x1="22" y1="16" x2="25" y2="16"/>
+            <line x1="6" y1="-3" x2="6" y2="0"/>
+            <line x1="11" y1="-3" x2="11" y2="0"/>
+            <line x1="16" y1="-3" x2="16" y2="0"/>
+            <line x1="6" y1="22" x2="6" y2="25"/>
+            <line x1="11" y1="22" x2="11" y2="25"/>
+            <line x1="16" y1="22" x2="16" y2="25"/>
+        </g>
+    </g>
+
+    <!-- Subtle scan line on screen -->
+    <line x1="164" y1="195" x2="436" y2="195" stroke="#22d3ee" stroke-width="0.5" opacity="0.15"/>
+</svg>

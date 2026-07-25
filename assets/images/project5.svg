@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Attendance Tracker">
+    <defs>
+        <linearGradient id="screen" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0a0e1a"/><stop offset="100%" stop-color="#111827"/>
+        </linearGradient>
+        <linearGradient id="frame" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1e293b"/><stop offset="100%" stop-color="#0f172a"/>
+        </linearGradient>
+        <linearGradient id="cGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/>
+        </linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <symbol id="hex" viewBox="-10 -10 20 20">
+            <polygon points="0,-10 8.66,-5 8.66,5 0,10 -8.66,5 -8.66,-5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </symbol>
+    </defs>
+
+    <g opacity="0.12" stroke="#06b6d4" stroke-width="0.5" fill="none">
+        <path d="M 0 80 L 600 80 M 0 160 L 600 160 M 0 240 L 600 240 M 0 320 L 600 320"/>
+        <path d="M 100 0 L 100 400 M 200 0 L 200 400 M 300 0 L 300 400 M 400 0 L 400 400 M 500 0 L 500 400"/>
+    </g>
+    <g opacity="0.25" color="#06b6d4">
+        <use href="#hex" x="60" y="60" width="36" height="36"/>
+        <use href="#hex" x="520" y="80" width="44" height="44"/>
+        <use href="#hex" x="80" y="320" width="32" height="32"/>
+        <use href="#hex" x="500" y="320" width="40" height="40"/>
+    </g>
+    <g opacity="0.4" fill="#22d3ee">
+        <circle cx="50" cy="200" r="4"/><circle cx="560" cy="200" r="4"/>
+        <circle cx="150" cy="40" r="3"/><circle cx="450" cy="360" r="3"/>
+    </g>
+    <g stroke="#06b6d4" stroke-width="1.2" fill="none" opacity="0.5">
+        <path d="M 380 50 L 460 50 L 460 90 L 520 90"/>
+        <circle cx="380" cy="50" r="3" fill="#22d3ee"/><circle cx="520" cy="90" r="3" fill="#22d3ee"/>
+        <rect x="430" y="65" width="20" height="20" rx="2"/>
+    </g>
+    <g stroke="#06b6d4" stroke-width="1.2" fill="none" opacity="0.5">
+        <path d="M 80 320 L 80 360 L 140 360"/>
+        <path d="M 100 310 L 100 340"/>
+        <circle cx="80" cy="320" r="3" fill="#22d3ee"/><circle cx="80" cy="360" r="3" fill="#22d3ee"/><circle cx="140" cy="360" r="3" fill="#22d3ee"/>
+    </g>
+    <g font-family="monospace" font-size="11" fill="#22d3ee" opacity="0.55">
+        <text x="40" y="120">01</text><text x="545" y="140">10</text>
+        <text x="30" y="280">11</text><text x="555" y="290">01</text>
+    </g>
+    <g font-family="monospace" font-size="20" fill="#06b6d4" opacity="0.45" font-weight="bold">
+        <text x="20" y="180">{ }</text><text x="545" y="240">{ }</text>
+    </g>
+
+    <ellipse cx="300" cy="335" rx="190" ry="8" fill="#06b6d4" opacity="0.2" filter="url(#softGlow)"/>
+
+    <!-- ===== ATTENDANCE TRACKER: Dashboard with stats, calendar, chart ===== -->
+    <g transform="translate(150, 95)">
+        <!-- Dashboard card -->
+        <rect x="0" y="0" width="300" height="220" rx="12" fill="url(#frame)" stroke="#06b6d4" stroke-width="1.5"/>
+        <!-- Top bar -->
+        <rect x="0" y="0" width="300" height="22" rx="12" fill="#1e293b"/>
+        <rect x="0" y="14" width="300" height="8" fill="#1e293b"/>
+        <circle cx="12" cy="11" r="3" fill="#ef4444"/>
+        <circle cx="22" cy="11" r="3" fill="#fbbf24"/>
+        <circle cx="32" cy="11" r="3" fill="#22c55e"/>
+        <text x="148" y="15" text-anchor="middle" font-family="monospace" font-size="8" fill="#22d3ee">dashboard.attendance</text>
+
+        <!-- Stats row (3 cards) -->
+        <g transform="translate(10, 32)">
+            <!-- Card 1: Present -->
+            <rect x="0" y="0" width="86" height="40" rx="4" fill="#0a0e1a" stroke="#22d3ee" stroke-width="0.8" opacity="0.9"/>
+            <text x="6" y="14" font-family="monospace" font-size="6" fill="#22d3ee" opacity="0.7">PRESENT</text>
+            <text x="6" y="32" font-family="monospace" font-size="16" font-weight="bold" fill="#22c55e">87%</text>
+            <circle cx="76" cy="14" r="3" fill="#22c55e" filter="url(#glow)"/>
+            <!-- Card 2: Absent -->
+            <rect x="97" y="0" width="86" height="40" rx="4" fill="#0a0e1a" stroke="#22d3ee" stroke-width="0.8" opacity="0.9"/>
+            <text x="103" y="14" font-family="monospace" font-size="6" fill="#22d3ee" opacity="0.7">ABSENT</text>
+            <text x="103" y="32" font-family="monospace" font-size="16" font-weight="bold" fill="#ef4444">8%</text>
+            <circle cx="173" cy="14" r="3" fill="#ef4444" filter="url(#glow)"/>
+            <!-- Card 3: Late -->
+            <rect x="194" y="0" width="86" height="40" rx="4" fill="#0a0e1a" stroke="#22d3ee" stroke-width="0.8" opacity="0.9"/>
+            <text x="200" y="14" font-family="monospace" font-size="6" fill="#22d3ee" opacity="0.7">LATE</text>
+            <text x="200" y="32" font-family="monospace" font-size="16" font-weight="bold" fill="#fbbf24">5%</text>
+            <circle cx="270" cy="14" r="3" fill="#fbbf24" filter="url(#glow)"/>
+        </g>
+
+        <!-- Bar chart (left half) -->
+        <g transform="translate(15, 90)">
+            <text x="0" y="0" font-family="monospace" font-size="7" fill="#22d3ee" opacity="0.7">WEEKLY</text>
+            <!-- axes -->
+            <line x1="0" y1="80" x2="130" y2="80" stroke="#22d3ee" stroke-width="0.5" opacity="0.4"/>
+            <line x1="0" y1="10" x2="0" y2="80" stroke="#22d3ee" stroke-width="0.5" opacity="0.4"/>
+            <!-- Bars -->
+            <g>
+                <rect x="8" y="30" width="12" height="50" fill="url(#cGrad)" rx="1"/>
+                <rect x="28" y="20" width="12" height="60" fill="url(#cGrad)" rx="1"/>
+                <rect x="48" y="38" width="12" height="42" fill="url(#cGrad)" rx="1"/>
+                <rect x="68" y="15" width="12" height="65" fill="url(#cGrad)" rx="1"/>
+                <rect x="88" y="25" width="12" height="55" fill="url(#cGrad)" rx="1"/>
+                <rect x="108" y="35" width="12" height="45" fill="url(#cGrad)" rx="1"/>
+            </g>
+            <!-- Day labels -->
+            <g font-family="monospace" font-size="5" fill="#22d3ee" opacity="0.6" text-anchor="middle">
+                <text x="14" y="90">M</text><text x="34" y="90">T</text><text x="54" y="90">W</text>
+                <text x="74" y="90">T</text><text x="94" y="90">F</text><text x="114" y="90">S</text>
+            </g>
+        </g>
+
+        <!-- Calendar grid (right half) -->
+        <g transform="translate(160, 90)">
+            <text x="0" y="0" font-family="monospace" font-size="7" fill="#22d3ee" opacity="0.7">CALENDAR</text>
+            <!-- 5x4 grid of cells -->
+            <g>
+                <!-- Week 1 -->
+                <rect x="0" y="10" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 5 17 L 9 21 L 15 13" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="24" y="10" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 29 17 L 33 21 L 39 13" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="48" y="10" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 53 17 L 57 21 L 63 13" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="72" y="10" width="20" height="14" rx="2" fill="#fbbf24" opacity="0.7"/>
+                <rect x="96" y="10" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 101 17 L 105 21 L 111 13" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="120" y="10" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 125 17 L 129 21 L 135 13" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <!-- Week 2 -->
+                <rect x="0" y="28" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 5 35 L 9 39 L 15 31" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="24" y="28" width="20" height="14" rx="2" fill="#ef4444" opacity="0.7"/>
+                <line x1="29" y1="32" x2="39" y2="38" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="39" y1="32" x2="29" y2="38" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                <rect x="48" y="28" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 53 35 L 57 39 L 63 31" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="72" y="28" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 77 35 L 81 39 L 87 31" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="96" y="28" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 101 35 L 105 39 L 111 31" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="120" y="28" width="20" height="14" rx="2" fill="#fbbf24" opacity="0.7"/>
+                <!-- Week 3 -->
+                <rect x="0" y="46" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 5 53 L 9 57 L 15 49" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="24" y="46" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 29 53 L 33 57 L 39 49" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="48" y="46" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 53 53 L 57 57 L 63 49" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="72" y="46" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 77 53 L 81 57 L 87 49" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="96" y="46" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 101 53 L 105 57 L 111 49" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="120" y="46" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 125 53 L 129 57 L 135 49" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <!-- Week 4 -->
+                <rect x="0" y="64" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 5 71 L 9 75 L 15 67" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="24" y="64" width="20" height="14" rx="2" fill="#22c55e" opacity="0.7"/>
+                <path d="M 29 71 L 33 75 L 39 67" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <rect x="48" y="64" width="20" height="14" rx="2" fill="#0a0e1a" stroke="#22d3ee" stroke-width="0.5" opacity="0.5"/>
+                <rect x="72" y="64" width="20" height="14" rx="2" fill="#0a0e1a" stroke="#22d3ee" stroke-width="0.5" opacity="0.5"/>
+                <rect x="96" y="64" width="20" height="14" rx="2" fill="#0a0e1a" stroke="#22d3ee" stroke-width="0.5" opacity="0.5"/>
+                <rect x="120" y="64" width="20" height="14" rx="2" fill="#0a0e1a" stroke="#22d3ee" stroke-width="0.5" opacity="0.5"/>
+            </g>
+        </g>
+
+        <!-- User row (bottom) -->
+        <g transform="translate(10, 195)">
+            <rect x="0" y="0" width="280" height="18" rx="3" fill="#0a0e1a" stroke="#22d3ee" stroke-width="0.5" opacity="0.7"/>
+            <circle cx="10" cy="9" r="4" fill="url(#cGrad)"/>
+            <text x="20" y="12" font-family="monospace" font-size="7" fill="#e2e8f0">student.name</text>
+            <rect x="200" y="4" width="70" height="10" rx="5" fill="#22c55e" opacity="0.7"/>
+            <text x="235" y="11" text-anchor="middle" font-family="monospace" font-size="6" fill="white" font-weight="bold">PRESENT</text>
+        </g>
+    </g>
+
+    <!-- Floating chart bar (top right) -->
+    <g transform="translate(465, 70)" opacity="0.85">
+        <rect x="-12" y="-8" width="6" height="14" fill="url(#cGrad)" rx="1"/>
+        <rect x="-3" y="-12" width="6" height="18" fill="url(#cGrad)" rx="1"/>
+        <rect x="6" y="-5" width="6" height="11" fill="url(#cGrad)" rx="1"/>
+    </g>
+
+    <!-- Floating check (bottom right) -->
+    <g transform="translate(465, 325)" opacity="0.9">
+        <circle r="14" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+        <path d="M -6 0 L -2 4 L 6 -5" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+    </g>
+
+    <!-- Chip icon -->
+    <g transform="translate(170, 130)">
+        <rect width="22" height="22" rx="3" fill="#1e293b" stroke="#22d3ee" stroke-width="1.2"/>
+        <rect x="5" y="5" width="12" height="12" rx="1" fill="none" stroke="#22d3ee" stroke-width="0.8" opacity="0.6"/>
+        <g stroke="#22d3ee" stroke-width="0.8" opacity="0.7">
+            <line x1="-3" y1="6" x2="0" y2="6"/><line x1="-3" y1="11" x2="0" y2="11"/><line x1="-3" y1="16" x2="0" y2="16"/>
+            <line x1="22" y1="6" x2="25" y2="6"/><line x1="22" y1="11" x2="25" y2="11"/><line x1="22" y1="16" x2="25" y2="16"/>
+        </g>
+    </g>
+
+    <!-- Glowing A badge -->
+    <g transform="translate(450, 165)">
+        <circle r="48" fill="#22d3ee" opacity="0.18" filter="url(#softGlow)"/>
+        <circle r="38" fill="#0a0e1a" stroke="url(#cGrad)" stroke-width="3"/>
+        <circle r="32" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.4"/>
+        <text x="0" y="11" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="url(#cGrad)">A</text>
+        <g stroke="#22d3ee" stroke-width="1.5" opacity="0.7">
+            <line x1="0" y1="-30" x2="0" y2="-26"/><line x1="0" y1="26" x2="0" y2="30"/>
+            <line x1="-30" y1="0" x2="-26" y2="0"/><line x1="26" y1="0" x2="30" y2="0"/>
+        </g>
+    </g>
+
+    <line x1="150" y1="210" x2="450" y2="210" stroke="#22d3ee" stroke-width="0.5" opacity="0.15"/>
+</svg>

@@ -16,8 +16,8 @@
             tech: ['HTML5', 'CSS3', 'JavaScript', 'PWA', 'Service Worker', 'LocalStorage', 'Chart.js', 'jsPDF'],
             category: 'web',
             image: 'assets/images/project-pocketpilot.svg',
-            live: 'YOUR_LIVE_DEMO_LINK',
-            repo: 'YOUR_GITHUB_REPOSITORY_LINK',
+            live: 'https://shyam2010-py.github.io/StudentBudgetTracker/index.html',
+            repo: 'https://github.com/Shyam2010-Py/StudentBudgetTracker',
             latest: true
         },
         {

@@ -11,6 +11,25 @@
        ============================ */
     const PROJECTS = [
         {
+            title: 'PocketPilot — Student Budget Tracker',
+            desc: 'An offline-first Progressive Web App built specifically for students to manage their monthly allowance, expenses, savings, financial goals, analytics, and reports. Designed with a privacy-first approach using LocalStorage and Service Workers.',
+            tech: ['HTML5', 'CSS3', 'JavaScript', 'PWA', 'Service Worker', 'LocalStorage', 'Chart.js', 'jsPDF'],
+            category: 'web',
+            image: 'assets/images/project-pocketpilot.svg',
+            live: 'YOUR_LIVE_DEMO_LINK',
+            repo: 'YOUR_GITHUB_REPOSITORY_LINK',
+            latest: true
+        },
+        {
+            title: 'Logic Lab',
+            desc: 'An interactive web tool to explore and experiment with basic digital logic concepts.',
+            tech: ['JavaScript', 'HTML5 Canvas'],
+            category: 'electronics',
+            image: 'assets/images/project6.svg',
+            live: 'https://shyam2010-py.github.io/LogicLab/',
+            repo: 'https://github.com/Shyam2010-Py/LogicLab'
+        },
+        {
             title: 'ECE Toolkit',
             desc: 'A web-based collection of tools and references built for Electronics & Communication Engineering students.',
             tech: ['HTML', 'CSS', 'JavaScript'],
@@ -20,15 +39,6 @@
             repo: 'https://github.com/Shyam2010-Py/ece-toolkit'
         },
         {
-            title: 'Python for Students',
-            desc: 'Beginner-friendly Python learning resources with examples, notes, and practice problems.',
-            tech: ['HTML', 'CSS', 'JavaScript'],
-            category: 'programming',
-            image: 'assets/images/project2.svg',
-            live: 'https://shyam2010-py.github.io/python-for-students/',
-            repo: 'https://github.com/Shyam2010-Py/python-for-students'
-        },
-        {
             title: 'Microcontroller Hub',
             desc: 'A learning resource covering Arduino, ESP32, and other microcontrollers with code snippets and guides.',
             tech: ['HTML', 'CSS', 'JavaScript'],
@@ -36,6 +46,15 @@
             image: 'assets/images/project3.svg',
             live: 'https://shyam2010-py.github.io/microcontroller-hub/',
             repo: 'https://github.com/Shyam2010-Py/microcontroller-hub'
+        },
+        {
+            title: 'Python for Students',
+            desc: 'Beginner-friendly Python learning resources with examples, notes, and practice problems.',
+            tech: ['HTML', 'CSS', 'JavaScript'],
+            category: 'programming',
+            image: 'assets/images/project2.svg',
+            live: 'https://shyam2010-py.github.io/python-for-students/',
+            repo: 'https://github.com/Shyam2010-Py/python-for-students'
         },
         {
             title: 'C Programming Hub',
@@ -54,15 +73,6 @@
             image: 'assets/images/project5.svg',
             live: 'https://shyam2010-py.github.io/Attendance-Tracker/login.html',
             repo: 'https://github.com/Shyam2010-Py/Attendance-Tracker'
-        },
-        {
-            title: 'Logic Lab',
-            desc: 'An interactive web tool to explore and experiment with basic digital logic concepts.',
-            tech: ['JavaScript', 'HTML5 Canvas'],
-            category: 'electronics',
-            image: 'assets/images/project6.svg',
-            live: 'https://shyam2010-py.github.io/LogicLab/',
-            repo: 'https://github.com/Shyam2010-Py/LogicLab'
         }
     ];
 
@@ -222,14 +232,17 @@
             if (filter !== 'all' && project.category !== filter) return;
 
             const card = document.createElement('div');
-            card.className = 'project-card reveal';
+            card.className = 'project-card reveal' + (project.latest ? ' is-latest' : '');
             card.style.transitionDelay = `${idx * 0.05}s`;
             card.innerHTML = `
                 <div class="project-image">
                     <img src="${project.image}" alt="${project.title}" loading="lazy">
+                    ${project.latest ? '<span class="latest-badge"><i class="fas fa-star"></i> Latest Project</span>' : ''}
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">${project.title}</h3>
+                    <div class="project-header">
+                        <h3 class="project-title">${project.title}</h3>
+                    </div>
                     <p class="project-desc">${project.desc}</p>
                     <div class="project-tech">
                         ${project.tech.map(t => `<span>${t}</span>`).join('')}

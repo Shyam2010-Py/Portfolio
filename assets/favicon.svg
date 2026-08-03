@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="GP Favicon">
+  <title>GP</title>
+  <rect x="2" y="2" width="28" height="28" rx="6" fill="#0B1020"/>
+  <rect x="2" y="2" width="28" height="28" rx="6" fill="none" stroke="#00D4FF" stroke-width="1.6"/>
+  <text x="16" y="22" text-anchor="middle"
+        font-family="Inter, Arial, sans-serif"
+        font-size="15" font-weight="800"
+        fill="#FFFFFF" letter-spacing="-0.5">GP</text>
+  <circle cx="26" cy="8" r="1.6" fill="#00E676"/>
+</svg>

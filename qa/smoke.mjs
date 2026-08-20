@@ -5,6 +5,7 @@ import { execFileSync } from 'node:child_process';
 const root = process.cwd();
 const failures = [];
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const mainJs = fs.readFileSync(path.join(root, 'js', 'main.js'), 'utf8');
 
 for (const ref of [...html.matchAll(/(?:src|href)=["']([^"'#?]+)["']/gi)].map((m) => m[1])) {
   if (/^(?:https?:|data:|mailto:|javascript:)/i.test(ref)) continue;
@@ -31,17 +32,29 @@ for (const file of fs.readdirSync(jsDir).filter((name) => name.endsWith('.js')))
   }
 }
 
-const requiredLinks = [
-  'LogicLab',
-  'StudentBudgetTracker',
-  'ece-toolkit',
-  'microcontroller-hub',
-  'python-for-students',
-  'c-programming-hub',
-  'Attendance-Tracker'
+const requiredProjectMarkers = [
+  'PocketPilot — Student Budget Tracker',
+  'Logic Lab',
+  'ECE Toolkit',
+  'Microcontroller Hub',
+  'Python for Students',
+  'C Programming Hub',
+  'Attendance Tracker'
 ];
-for (const name of requiredLinks) {
-  if (!html.includes(name)) failures.push(`portfolio project reference missing: ${name}`);
+for (const marker of requiredProjectMarkers) {
+  if (!mainJs.includes(marker)) failures.push(`portfolio project definition missing: ${marker}`);
+}
+
+for (const url of [
+  'https://shyam2010-py.github.io/StudentBudgetTracker/',
+  'https://shyam2010-py.github.io/LogicLab/',
+  'https://shyam2010-py.github.io/ece-toolkit/',
+  'https://shyam2010-py.github.io/microcontroller-hub/',
+  'https://shyam2010-py.github.io/python-for-students/',
+  'https://shyam2010-py.github.io/c-programming-hub/',
+  'https://shyam2010-py.github.io/Attendance-Tracker/'
+]) {
+  if (!mainJs.includes(url)) failures.push(`portfolio live URL missing: ${url}`);
 }
 
 if (failures.length) {

@@ -45,15 +45,16 @@ for (const marker of requiredProjectMarkers) {
   if (!mainJs.includes(marker)) failures.push(`portfolio project definition missing: ${marker}`);
 }
 
-for (const url of [
-  'https://shyam2010-py.github.io/StudentBudgetTracker/',
+const requiredLiveUrls = [
+  'https://shyam2010-py.github.io/StudentBudgetTracker/index.html',
   'https://shyam2010-py.github.io/LogicLab/',
   'https://shyam2010-py.github.io/ece-toolkit/',
   'https://shyam2010-py.github.io/microcontroller-hub/',
   'https://shyam2010-py.github.io/python-for-students/',
   'https://shyam2010-py.github.io/c-programming-hub/',
-  'https://shyam2010-py.github.io/Attendance-Tracker/'
-]) {
+  'https://shyam2010-py.github.io/Attendance-Tracker/login.html'
+];
+for (const url of requiredLiveUrls) {
   if (!mainJs.includes(url)) failures.push(`portfolio live URL missing: ${url}`);
 }
 

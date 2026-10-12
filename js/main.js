@@ -1,4 +1,3 @@
-/* ============================================
    Portfolio - Main JavaScript
    ECE Diploma Student Portfolio
    ============================================ */
@@ -6,7 +5,6 @@
 (function () {
     'use strict';
 
-    /* ============================
        Configuration Data
        ============================ */
     const PROJECTS = [
@@ -78,7 +76,6 @@
 
     const CERTIFICATES = []; // Empty for now — section hidden in UI
 
-    /* ============================
        Loader
        ============================ */
     window.addEventListener('load', () => {
@@ -86,13 +83,11 @@
         setTimeout(() => loader.classList.add('hidden'), 500);
     });
 
-    /* ============================
        Theme Toggle
        ============================ */
     const themeToggle = document.getElementById('themeToggle');
     const root = document.documentElement;
 
-    // Load saved theme
     const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'light') {
         root.setAttribute('data-theme', 'light');
@@ -112,7 +107,6 @@
         }
     });
 
-    /* ============================
        Mobile Menu
        ============================ */
     const hamburger = document.getElementById('hamburger');
@@ -130,7 +124,6 @@
         });
     });
 
-    /* ============================
        Navbar Scroll Effect
        ============================ */
     const navbar = document.getElementById('navbar');
@@ -142,7 +135,6 @@
         }
     });
 
-    /* ============================
        Active Nav Link on Scroll
        ============================ */
     const sections = document.querySelectorAll('section[id]');
@@ -166,7 +158,6 @@
     }
     window.addEventListener('scroll', setActiveLink);
 
-    /* ============================
        Typing Animation
        ============================ */
     const typedName = document.getElementById('typedName');
@@ -179,7 +170,6 @@
             charIndex++;
             setTimeout(typeText, 100);
         } else {
-            // Append blinking cursor
             const cursor = document.createElement('span');
             cursor.className = 'cursor';
             cursor.textContent = '|';
@@ -188,7 +178,6 @@
     }
     setTimeout(typeText, 800);
 
-    /* ============================
        Animated Counters
        ============================ */
     const counters = document.querySelectorAll('.stat-number');
@@ -221,7 +210,6 @@
 
     counters.forEach(c => counterObserver.observe(c));
 
-    /* ============================
        Render Projects
        ============================ */
     const projectsGrid = document.getElementById('projectsGrid');
@@ -258,14 +246,12 @@
                 </div>
             `;
             projectsGrid.appendChild(card);
-            // Trigger reveal animation
             setTimeout(() => card.classList.add('visible'), 50);
         });
     }
 
     renderProjects();
 
-    /* ============================
        Project Filtering
        ============================ */
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -277,7 +263,6 @@
         });
     });
 
-    /* ============================
        Render Certificates (hidden for now)
        ============================ */
     const certificatesGrid = document.getElementById('certificatesGrid');
@@ -299,7 +284,6 @@
         });
     }
 
-    /* ============================
        Scroll Reveal Animation
        ============================ */
     const revealElements = document.querySelectorAll('.glass, .section-title, .resume-container, .timeline-item, .ideology-card, .about-card, .skill-category, .cert-card');
@@ -317,7 +301,6 @@
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    /* ============================
        Back to Top Button
        ============================ */
     const backToTop = document.getElementById('backToTop');
@@ -332,7 +315,6 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    /* ============================
        Particles Effect
        ============================ */
     const particlesContainer = document.getElementById('particles');
@@ -348,7 +330,6 @@
         }
     }
 
-    /* ============================
        Contact Form Handler
        ============================ */
     const contactForm = document.getElementById('contactForm');
@@ -356,14 +337,12 @@
 
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        // Demo: simulate sending
         formStatus.textContent = '✓ Message sent successfully! I will get back to you soon.';
         formStatus.style.color = 'var(--accent)';
         contactForm.reset();
         setTimeout(() => { formStatus.textContent = ''; }, 5000);
     });
 
-    /* ============================
        Footer Year
        ============================ */
     document.getElementById('year').textContent = new Date().getFullYear();

@@ -52,3 +52,19 @@ This is an initial audit queue, not a claim that every listed item is a confirme
 - Run each project's available tests where a suitable environment exists.
 - Verify screenshots and asset licensing/ownership.
 - Verify project descriptions with the actual source, not only README claims.
+
+
+## GitHub Actions status observed during audit (2026-10-31)
+
+| Repository | Latest observed workflow status | Interpretation |
+|---|---|---|
+| Portfolio | Portfolio QA completed successfully for the audit-doc commit; Pages deployment was pending at the time checked. | Re-check Pages deployment before declaring the site published. |
+| StudentBudgetTracker | Latest observed regression tests, QA, and Pages deployment completed successfully (2026-10-28). | Positive CI signal; does not replace a live manual test. |
+| LogicLab | Latest observed QA and Pages deployment completed successfully (2026-08-21). | Positive historical CI signal; re-run after any project changes. |
+| Attendance-Tracker | Latest observed Pages deployment completed successfully (2026-06-30). | Historical deployment signal; no current application test workflow was observed. |
+| AI-Friend-Bot | No GitHub Actions runs returned in the checked first page. | Test locally or add CI later. |
+| J.A.R.V.I.S. Telegram Bot | No GitHub Actions runs returned in the checked first page. | Inspect and run its existing tests locally or add CI later. |
+| AirCanvas | No GitHub Actions runs returned in the checked first page. | Android build and hardware integration need dedicated verification. |
+| ESP32 Secure Lock | No GitHub Actions runs returned in the checked first page. | Android build/test verification is still required. |
+
+Workflow status is time-sensitive and must be checked again before release.
